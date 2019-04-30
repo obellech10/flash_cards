@@ -8,4 +8,8 @@ class Card
     @answer = answer
     @category = category
   end
+
+  def answer
+    @answer
+  end
 end
