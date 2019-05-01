@@ -9,7 +9,4 @@ class Card
     @category = category
   end
 
-  def answer
-    @answer
-  end
 end
