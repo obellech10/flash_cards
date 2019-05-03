@@ -13,4 +13,8 @@ class Round
     @turn
   end
 
+  def current_card
+    @deck.cards[0]
+  end
+
 end
