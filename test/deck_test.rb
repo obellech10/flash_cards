@@ -13,6 +13,12 @@ class DeckTest < MiniTest::Test
   end
 
   def test_it_can_count
-    assert_equal @cards.count, @deck.count 
+    assert_equal @cards.count, @deck.count
   end
+
+  def test_cards_in_category
+    assert_equal [@card_2, @card_3], @deck.cards_in_category(:STEM)
+  end
+
+
 end
