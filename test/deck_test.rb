@@ -12,5 +12,7 @@ class DeckTest < MiniTest::Test
     @deck = Deck.new(@cards)
   end
 
-  
+  def test_it_can_count
+    assert_equal @cards.count, @deck.count 
+  end
 end
