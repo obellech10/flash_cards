@@ -3,6 +3,7 @@ require 'minitest/pride'
 require '../lib/card'
 require '../lib/deck'
 require '../lib/round'
+require '../lib/turn'
 
 class RoundTest < MiniTest::Test
   def setup
@@ -11,6 +12,7 @@ class RoundTest < MiniTest::Test
     @card_3 = Card.new("Describe in words the exact direction that is 697.5° clockwise from due north?", "North north west", :STEM)
     @deck = Deck.new([@card_1, @card_2, @card_3])
     @round = Round.new(@deck)
+    @turn = Turn.new("Juneau", @card_1)
   end
 
   def test_it_exists
@@ -27,6 +29,10 @@ class RoundTest < MiniTest::Test
 
   def test_current_card
     assert_equal @card_1, @round.current_card
+  end
+
+  def test_if_it_takes_a_new_turn
+    assert_equal @turn.guess, @round.take_turn("Juneau").guess
   end
 
 end
