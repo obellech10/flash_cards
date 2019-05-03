@@ -13,7 +13,7 @@ class DeckTest < MiniTest::Test
   end
 
   def test_it_can_count
-    assert_equal @cards.count, @deck.count
+    assert_equal 3, @deck.count
   end
 
   def test_cards_in_category
