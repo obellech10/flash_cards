@@ -17,4 +17,8 @@ class Round
     @deck.cards[0]
   end
 
+  def take_turn(guess)
+    this_turn = Turn.new(guess, self.current_card)
+  end
+
 end
