@@ -2,23 +2,25 @@ require '../lib/card'
 require '../lib/deck'
 
 class Round
-  attr_reader :deck, :turn
+  attr_reader :deck, :turns
 
   def initialize(deck)
     @deck = deck
-    @turn = []
+    @turns = []
   end
 
-  def turns
-    @turn
-  end
+  # def turns
+  #   @turn
+  # end
 
   def current_card
     @deck.cards[0]
   end
 
   def take_turn(guess)
-    this_turn = Turn.new(guess, self.current_card)
+    new_turn = Turn.new(guess, self.current_card)
+    @turns << new_turn
+    # binding.pry
   end
 
 end
