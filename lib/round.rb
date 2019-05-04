@@ -9,10 +9,6 @@ class Round
     @turns = []
   end
 
-  # def turns
-  #   @turn
-  # end
-
   def current_card
     @deck.cards[0]
   end
@@ -20,7 +16,6 @@ class Round
   def take_turn(guess)
     new_turn = Turn.new(guess, self.current_card)
     @turns << new_turn
-    # binding.pry
   end
 
 end
