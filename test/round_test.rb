@@ -35,7 +35,6 @@ class RoundTest < MiniTest::Test
   def test_if_it_takes_a_new_turn
     @round_1.take_turn("Juneau")
     assert_instance_of Turn, @round_1.turns.first
-    # assert_equal @turn.class, Turn
   end
 
   def test_if_turn_is_correct
@@ -47,8 +46,9 @@ class RoundTest < MiniTest::Test
   end
 
   def test_it_takes_another_turn
-    skip
     @round_1.take_turn("Juneau")
     assert_equal 1, @round_1.turns.count
   end
+
+  
 end
