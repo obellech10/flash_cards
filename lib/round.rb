@@ -32,4 +32,15 @@ class Round
     @correct
   end
 
+  def number_correct_by_category(category)
+    @turns.find_all do |turn|
+      turn.correct? && turn.card.category == category
+    end.count
+  end
+
+  def percent_correct
+    # (@turns.count.to_f / self.number_correct) * 100
+    (self.number_correct / @turns.count.to_f) * 100
+  end
+
 end
