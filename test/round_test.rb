@@ -52,4 +52,14 @@ class RoundTest < MiniTest::Test
     assert_instance_of Turn, @round_1.turns.last
   end
 
+  def test_number_correct_by_category
+    @round_1.take_turn("Juneau")
+    assert_equal 1, @round_1.number_correct_by_category(:Geography)
+  end
+
+  def test_percent_correct
+    @round_1.take_turn("Juneau")
+    @round_1.take_turn("Mars")
+    assert_equal 50.0 , @round_1.percent_correct
+  end
 end
