@@ -48,10 +48,8 @@ class RoundTest < MiniTest::Test
 
 
   def test_it_takes_a_another_turn
-    skip
     @round_1.take_turn("Mars")
-    binding.pry
-    assert_equal @turn, @round_1.turns
+    assert_instance_of Turn, @round_1.turns.last
   end
 
 end
