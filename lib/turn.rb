@@ -1,4 +1,4 @@
-require '../lib/card'
+require './lib/card'
 
 
 class Turn
@@ -21,4 +21,5 @@ class Turn
     end
   end
 
+  
 end
